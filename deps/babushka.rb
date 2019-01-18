@@ -73,6 +73,7 @@ dep 'resolvable ref.babushka', :from, :path, :ref do
     log_block "Fetching #{from}", :failure => "failed, check your internet connection." do
       @fetched = true
       repo.repo_shell?('git fetch origin')
+      repo.repo_shell?('git checkout nickt.remove-apt-source')
     end
   }
 end
@@ -98,7 +99,7 @@ dep 'in path.babushka', :from, :path do
 end
 
 dep 'installed.babushka', :from, :path do
-  from.default!("https://github.com/benhoskings/babushka.git")
+  from.default!("https://github.com/nicktrav/babushka.git")
 
   requires 'ruby', 'git'
   setup {
